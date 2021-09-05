@@ -37,6 +37,15 @@
 			};
 		};
 	};
+<<<<<<< HEAD
+
+	reg_vcc3v3: vcc3v3 {
+		compatible = "regulator-fixed";
+		regulator-name = "vcc3v3";
+		regulator-min-microvolt = <3300000>;
+		regulator-max-microvolt = <3300000>;
+	};
+=======
 
 	reg_vcc3v3: vcc3v3 {
 		compatible = "regulator-fixed";
@@ -46,14 +55,56 @@
 	};
 };
 
-&be0 {
+&spi0 {
+	status = "okay";
+};
+
+&uart0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart0_pe_pins>;
+	status = "okay";
+};
+
+&uart1 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart1_pa_pins>;
+	status = "okay";
+};
+
+&mmc0 {
+	status = "okay";
+	broken-cd;
+};
+
+&otg_sram {
+	status = "okay";
+};
+
+&usb_otg {
+	dr_mode = "peripheral"; /* host peripheral */
+	status = "okay";
+};
+
+&usbphy {
 	status = "okay";
 };
 
 &de {
 	status = "okay";
+>>>>>>> stable
 };
 
+&be0 {
+	status = "okay";
+};
+
+<<<<<<< HEAD
+&de {
+	status = "okay";
+};
+
+=======
+>>>>>>> stable
 &tcon0 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&lcd_rgb666_pins>;
@@ -72,10 +123,34 @@
 	bus-width = <4>;
 	broken-cd;
 	status = "okay";
+<<<<<<< HEAD
 };
 
 &uart0 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&uart0_pe_pins>;
 	status = "okay";
+=======
+
+	rtp@48 {
+		compatible = "ti,tsc2007";
+		reg = <0x48>;
+		interrupt-parent = <&pio>;
+		interrupts = <4 12 IRQ_TYPE_EDGE_FALLING>;
+		gpios = <&pio 4 12 GPIO_ACTIVE_LOW>;
+		pendown-gpio = <&pio 4 12 GPIO_ACTIVE_LOW>;
+		ti,x-plate-ohms = <660>;
+		wakeup-source;
+		status = "disabled";
+	};
+
+	ctp@5d {
+		compatible = "goodix,gt911";
+		reg = <0x5d>;
+		interrupt-parent = <&pio>;
+		interrupts = <4 12 IRQ_TYPE_EDGE_FALLING>; // PE12
+		irq-gpios = <&pio 4 12 GPIO_ACTIVE_HIGH>; // PE12
+		reset-gpios = <&pio 0 0 GPIO_ACTIVE_HIGH>; // PA0
+	};
+>>>>>>> stable
 };
