@@ -230,8 +230,8 @@ ov5640: camera@3c {
 			assigned-clock-rates = <24000000>;
 			status = "disabled";
 
-			port {
-ov5640_ep: endpoint {
+	port {
+		ov5640_ep: endpoint {
 					remote-endpoint = <&csi0_ep>;
 					bus-width = <8>;
 					hsync-active = <0>;

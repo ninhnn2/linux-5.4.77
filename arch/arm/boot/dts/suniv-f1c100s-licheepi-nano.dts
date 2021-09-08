@@ -37,15 +37,6 @@
 			};
 		};
 	};
-<<<<<<< HEAD
-
-	reg_vcc3v3: vcc3v3 {
-		compatible = "regulator-fixed";
-		regulator-name = "vcc3v3";
-		regulator-min-microvolt = <3300000>;
-		regulator-max-microvolt = <3300000>;
-	};
-=======
 
 	reg_vcc3v3: vcc3v3 {
 		compatible = "regulator-fixed";
@@ -91,20 +82,16 @@
 
 &de {
 	status = "okay";
->>>>>>> stable
 };
 
 &be0 {
 	status = "okay";
 };
 
-<<<<<<< HEAD
 &de {
 	status = "okay";
 };
 
-=======
->>>>>>> stable
 &tcon0 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&lcd_rgb666_pins>;
@@ -123,14 +110,12 @@
 	bus-width = <4>;
 	broken-cd;
 	status = "okay";
-<<<<<<< HEAD
 };
 
 &uart0 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&uart0_pe_pins>;
 	status = "okay";
-=======
 
 	rtp@48 {
 		compatible = "ti,tsc2007";
@@ -152,5 +137,4 @@
 		irq-gpios = <&pio 4 12 GPIO_ACTIVE_HIGH>; // PE12
 		reset-gpios = <&pio 0 0 GPIO_ACTIVE_HIGH>; // PA0
 	};
->>>>>>> stable
 };
